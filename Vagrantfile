@@ -23,9 +23,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.synced_folder '.', '/opt/rpm'
 
   config.vm.provider "virtualbox"
-  config.vm.provider "vmware_fusion"
 
-  config.vm.box = "centos-7.0-base"
+  config.vm.box = "virtualbox-centos7.box"
 
   config.vm.provider :virtualbox do |vb|
     vb.customize ['modifyvm', :id, '--cpus', 2]

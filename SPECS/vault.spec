@@ -1,12 +1,12 @@
 Name:           vault
-Version:        0.1.2
+Version:        0.7.2
 Release:        3%{?dist}
 Summary:        A tool for managing secrets
 
 Group:          System Environment/Daemons
 License:        MPLv2.0
 URL:            http://www.vaultproject.io
-Source0:        https://dl.bintray.com/mitchellh/%{name}/%{name}_%{version}_linux_amd64.zip
+Source0:        https://releases.hashicorp.com/%{name}/%{version}/%{name}_%{version}_linux_amd64.zip
 Source1:        %{name}.service
 Source2:	vault-bootstrap.sh
 Source3:	vault-unseal.sh
@@ -79,5 +79,8 @@ rm -rf %{buildroot}
 
 
 %changelog
+* Tue May 16 2017 Lars Remes <lars.remes@lawly.fi>
+* updated to 0.7.2
+
 * Thu Apr 2 2015 Chris <Chris.Aubuchon@gmail.com>
 * updated to 0.1.2
