@@ -14,7 +14,7 @@ if [ -z "${token}" -a -f ${SECURE_TOKEN_PATH} ]; then
 fi
 
 if [ "$(curl -s -1 https://localhost:8200/v1/sys/seal-status | jq .sealed )" == "true" ]; then
-	for key in $(consul-cli kv-read --token=${token} secure/vault/keys); do
+	for key in $(consul-cli kv read --token=${token} secure/vault/keys); do
 		vault unseal $key
 	done
 fi
